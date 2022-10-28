@@ -17,10 +17,6 @@ variables:
 steps:
 - publish: $(build.artifactstagingdirectory)
 - task: NuGetToolInstaller@1
-  inputs:
-    versionSpec: 
-  artifact: WebApp
-- task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
@@ -41,5 +37,4 @@ steps:
   displayName: 'Publish Artifact: drop'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
-
     
