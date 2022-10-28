@@ -15,7 +15,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-publish: $(build.artifactstagingdirectory)
+- publish: $(build.artifactstagingdirectory)
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 
   artifact: WebApp
 - task: NuGetToolInstaller@1
 
