@@ -15,6 +15,8 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+publish: $(build.artifactstagingdirectory)
+  artifact: WebApp
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -36,7 +38,5 @@ steps:
   displayName: 'Publish Artifact: drop'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
--steps:
-- publish: $(build.artifactstagingdirectory)
-  artifact: WebApp
+
     
